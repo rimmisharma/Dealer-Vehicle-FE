@@ -1,0 +1,340 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #5A5A5A;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff9800;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff9800;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::before {
+  transform: scaleX(1);
+}
+
+nav ul li:last-child {
+  margin-right: 0; 
+}
+
+
+/* Header Styles */
+.header {
+  background-image: linear-gradient(to bottom, #000000, #333333);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #ff9800; 
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e65100; 
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.cta-button:hover::after {
+  opacity: 1;
+}
+
+
+
+/* Footer Styles */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+}
+
+.footer p {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Landing Page Styles */
+.features-section h2 {
+  margin-bottom: 10px;
+  text-align: center; 
+  perspective: 500px; 
+}
+
+.features-section h2:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotateX(25deg); 
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease; 
+}
+
+.features-section h2:hover:before {
+  transform: translate(-50%, -50%) rotateX(0); 
+}
+
+
+.features-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.features-section li {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  perspective: 1000px;
+}
+
+.features-section li:hover {
+  transform: rotateY(10deg);
+}
+
+.features-section li .feature-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.features-section li:hover .feature-info {
+  opacity: 1;
+}
+
+
+/*  Search Bar Styles */
+
+.input-wrapper {
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0 15px;
+  box-shadow: 0px 0px 8px #ddd;
+  display:flex;
+  align-items: center;
+}
+
+
+input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.25rem;
+  width: 100%;
+  margin-left:  5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#searcg-icon {
+  color: royalblue;
+}
+
+/* Form Styles */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container form {
+  display: grid;
+  grid-gap: 20px; 
+}
+
+.container label {
+  font-weight: bold;
+  margin-bottom: 5px; 
+}
+
+.container input,
+.container select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.container button[type="submit"] {
+  background-color: #ff9800;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container button[type="submit"]:hover {
+  background-color: #e65100;
+}
+
+.container p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.container p a {
+  color: #ff9800;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container p a:hover {
+  text-decoration: underline;
+}
+
+.disabled-input {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.disabled-input:hover {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* login form*/
+.panel {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
+

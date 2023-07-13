@@ -1,0 +1,105 @@
+/* LandingPage.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e7eaf6;
+}
+
+.header {
+  background-color: #a2a8d3;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.title {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #38598b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #113f67;
+}
+
+.features-section {
+  padding: 20px;
+  text-align: center;
+  color: #38598b;
+}
+
+.features-section h2 {
+  color: #113f67;
+}
+
+.search-bar {
+  margin-top: 20px;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  width: 200px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-bar button {
+  padding: 8px 16px;
+  background-color: #38598b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #113f67;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: #a2a8d3;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,84 @@
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './LandingPage.css';
+import SearchBar from './SearchBar';
+
+const LandingPage = () => {
+  const [dealersList, setDealersList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [filteredDealersList, setFilteredDealersList] = useState([]);
+
+  const fetchDealers = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/dealers');
+      const data = await response.json();
+      setDealersList(data);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching dealers:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDealers();
+  }, []);
+
+  const handleSearch = async (value) => {
+    try {
+      const filteredList = dealersList.filter((dealer) =>
+        dealer.name.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredDealersList(filteredList);
+    } catch (error) {
+      console.error('Error filtering dealers:', error);
+      setFilteredDealersList([]);
+    }
+  };
+
+  return (
+    <div>
+      <header className="header">
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+        </nav>
+        <h1 className="title">VehicleTrade</h1>
+        <p className="subtitle">
+          Your Vehicle, Your Way: Connect with Dealers on our App
+        </p>
+        <Link to="/signin" className="cta-button">
+          Get Started
+        </Link>
+      </header>
+      <section id="features" className="features-section">
+        <h2>Our Dealerships</h2>
+        <SearchBar onSearch={handleSearch} />
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <ul>
+            {filteredDealersList.map((dealer) => (
+              <li key={dealer.id}>
+                <Link to={`/dealer/${dealer.id}`}>{dealer.name}</Link>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+      <footer className="footer">
+        <p>&copy; 2023 VehicleTrade. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default LandingPage;
